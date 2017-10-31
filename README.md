@@ -49,3 +49,4 @@ npm start
 * Azure Create Web App
 * remove /build directory from .gitignore (real app, setup build process)
 * add `express`, `body-parser`, `dotenv`
+* added node engine version: `"engines":{"node":">= 8.8.1"}`

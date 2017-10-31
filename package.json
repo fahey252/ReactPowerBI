@@ -2,7 +2,7 @@
   "name": "reactpowerbi",
   "version": "0.1.0",
   "private": true,
-  "engines":{"node":">= 8.0.0"},
+  "engines":{"node":">=8.8.1"},
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
