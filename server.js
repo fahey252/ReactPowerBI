@@ -3,7 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 7000,
     app = express();
 
-require('dotenv').config(); // loads process.env environment variables
+// require('dotenv').config(); // loads process.env environment variables
 
 app.use(express.static('build'));
 /*

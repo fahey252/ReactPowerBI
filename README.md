@@ -47,3 +47,5 @@ npm start
 * `npm run build`
 * Deployment Options > GitHub > Authorize
 * Azure Create Web App
+* remove /build directory from .gitignore (real app, setup build process)
+* add `express`, `body-parser`, `dotenv`
