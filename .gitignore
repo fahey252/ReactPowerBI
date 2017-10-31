@@ -67,7 +67,7 @@ notes.md# See https://help.github.com/ignore-files/ for more about ignoring file
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
