@@ -50,3 +50,4 @@ npm start
 * remove /build directory from .gitignore (real app, setup build process)
 * add `express`, `body-parser`, `dotenv`
 * added node engine version: `"engines":{"node":">= 8.8.1"}`
+* moved create-react-app related dependencies as devDependencies. (deploys faster, unecessary remotely.)
