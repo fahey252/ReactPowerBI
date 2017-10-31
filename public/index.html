@@ -20,6 +20,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="/powerbi.js"></script>
   </head>
   <body>
     <noscript>
@@ -36,5 +37,53 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div id="dashboardContainer" style="height: 800px"></div>
+    <div id="tileContainer" style="height: 800px"></div>
+    <script>
+      // var txtAccessToken = "H4sIAAAAAAAEACWWxwrshhJE_-VuZVBOBi-Uc87aKY3iKGfz_v0NeN_QUHW6uv79Y2fPMGXln7__lI-XfQFvhwcILAYsLw7AxjTXJ-NsuqblCEy12p9lsUMxEKJHzS85RmysnWgu0A8TCKqeTqG9ugvp9DOl0O62rnRNyeS3w48XYjmv1EMQUdEsMJjNTJOnBlXnCsF7rkPeHN39Saz0yAZYYTph79JRvszS1xxKkvIH1IXNcdS5DEaeS3uzIqgnZ934CpBxKUawfgAAz9_NHjJ2T-4MS2WKTwxd6Be7pYuiS9HFRlr5zH0kQqRBm1Bm7IcPas_9MVQj7TKegCqKSHqG3u2fU0s-M0KU2zjh8LcFoJUvAYBlwDNl4kO2GXcROTDgL-TcySXbeYWN0wyaHgZrPzMVLTSpN_T8ZJeA9TzQjwct8086rMc8CTJHKE1aVDSmGNSXC5UZ4bpMMlUGuTt5mNUw3w3p8HhPLx4tJk1gtcIiUQQ3BFsrmVpy-_T1O7WW7Ql-5kNg5SkfhgnlSVEnLhFRjchWQMrvN_elrTkxlcz20EbXquWdR3TSs_E59K6dLcoIsZXjkcnjWhQAwuZxK-Fa6ihI4htMvHuUSP7QXv5VKHIpFEBICzMrLsSiJqqC7QaVLPTzRDg4BrkGbDCkNJSqW4PsSD1ANj14cH5dOjjS9heYR5JiMWZdXn1IqI-Cta0IY_p0E4ogUGJeRWCA9upmI8cATGYLK6rxwp2QhgS-7_Q8dDvr-S4_sUxMzxIovOjl01CA9VY7xjRxuuoFcDWlDif_YiKnrl9pml6ui12gzvV9bAcKwK2DYpecJEF2d5bAky30Pjmf9AaKN6iMrm42gBxa3O_TwRLrU00BlLf4rlZgs5mjFpd1xwZqSHrsAeCvVxAUYyOvHNjSZFUi7xieLKw2OM-zNjJ71cTADoFRCLMY9KbtpB8HCVmXwAvm8ty__XXZn0aKJ3Cp1PwBIBkVB9lYMlwIIKCgMAeW22ZfjKOwl3icUhvk7UADeESnN8dgEHu_kd8EtBZBIBFDm7iNM0RmM1jY_u6WTSESHOaSBPZm13JTKOYyboyHO0INH__wJzja_emecqRjKAMzFouA908N1DZpVk9vlTJhPyzYjFeToxeuUXxFLpuFwDUBcBAjRe2HuHPh5Hs7uhnTuh-wEI28bFuvZcWCcx_Hypyl1PP4yibmMiIQFrBseLRZ84mrkVsGuQo0ieWUz1iR2Y0qUL0l80u2IqxpCm5rZGaafFu144n1LiKTr8Uzj96YRZAXE3Y1C89deg_qEZPPGZnCGkEUAPDGSvAR4iIMHoT3MteVtUxOzReWq5R58gI0bT9C1XMwhnF-M7gHkdzct6YYZSnUelqJxQUjjLi0jQ2DAUnMuyWBhQOLWyFnadVJRevvnivxcQ3pS4Ukadi4fenUMBu689EbkbASdJ2hKCkjrRIZkaxYsZI8uVFGKne_o2vQflswsOyHOi_0uknX6lcEn-oaZYQeHHplQbqeSmJpadbaJ-smWBkzZp4D3iYoaEbzs0PvQkPIg0CzkSXypM-7dhsb-54G8UEUHAz9LFjOWidfeUe-IoXu3LM-su9HrAneBN8yjB3jl2ezDslxUrlApD4IdgSj2MWzeWCNqnL-qvmtJHFjmMByFgUPES72TJszUw3xmaCYOOzmeFaETvVyFYvtRhaK4Pm5opn9A2ThLjWPP0_1Y1QJXLumknmnJ40nR2VFZdKPe3C0Vkkwrb3j5TGvnJQdu6oE5vSFyZcF4FXeqTyJ4yZr8YlCgU1drdCG3GVWypG1Cmuysqzs6eCHzqnJuPLcOh91wET7y7EigZwCMVnLIp3k4keqAedlGQ2kFukv0iu8UmPe2wevA1A410PxxvtpfYEo8lEY4wUtaq6OniQ0FdLeXSFE3AUyvycwu4SzCLw8VMJmKvYikNIUP3xhmON6z_oo48F6TzuC1DeA1Djn5SSQghrifIfVTNACUanTx7W6ySvq1rMc9DQV66v1Rkg5vqSA3EHw5QNnp0hP_-Jq8vjHJwwDoVmZ9EqX3AX1jM7hM7s9f0ETRPg6xKeaxRu1ZeigkKH0qm7YW73IX7nqtbL5nmImMA_W6HboBiAKwrk5gnHzOhSFeR97B8MzSZVbE9_rn3_-_PWHW595n7Tq-dWE2QQs4V34bwnMeXLtxWhJtnq_9oJ5tOKfy0cr9xs-DHabwmDzPxmZSObwMWka4hlY3XBXyT4dCYxNMMGiflHqrbIH_5aBR63YITRX55uEOqu0lZGizbrVbqe1Uy9LbELaN6B7dE5dm--EOtUusKKoya5L7Tvjhdvi0Az3q3c2zMHVHtYF6Wp6s9vp_bTD0e1AqvpEI-jlNdsMpr13eMEDHQzr7r7Y7gANokI6dTOSFkLzWAwg5rMM4SoxP8Jnp0UxnXQKnPrIgVplGivclF6_0O0lqD7wAKIKQYTG7UlD--oATrllbshxVjaY5O9xE37zkdf4Zx_Xxr-wUD52OJyV1M31fzI_c1OtSvhTOeo7kYMdreRDP3ZujcOfrfvPDK-tx2w_1uo3ZgUm9GtgfovRdP272E2D0XlAwyOufxkT6ct4A_In23gvwL3s4naL9zT8sugF4xCX7HQB6H2rkCLnuviwD8HV4GAxcAlpW_XdZV-va369QNXbWS3dycO_FKZs1minZkPlNdbS11GRR9qdWLW8qTjyZKqtHLGgxSTiODUmV2pA4o_SS-gmmeiU3F7WiNkJywKEOa86YmGNDwdRdagqssOiqmlzBuqPqqN8cIFfVNaZuRu_0MsFtZlxKUPztoNrBnwXMx8Dt0n16WVs576fBucT9vKhfCr1rQCy5wWR0s7w2mjyYBQJIGCBpD6PLKEPd-dFXbJPeh3uM6t55rz8d1YIAkwG5ifz__4P7x0MrhoLAAA=";
+      // var txtEmbedUrl = "https://app.powerbi.com/dashboardEmbed?dashboardId=0105e7f0-d32e-41c8-88c7-49836e5aec42&groupId=9166cf8d-d5fc-405e-bdc7-47e414da08fe";
+      // var txtEmbedDashboardId = "0105e7f0-d32e-41c8-88c7-49836e5aec42";
+
+      var txtAccessToken = "H4sIAAAAAAAEAB1WxQ7sCA78l3fNSmFaaQ5hZuzcwkmHGUb779szR9sl2SqX4e8_dvr0U1r8-e8fiCMt6PExwJxebZ9KYlvc_Ij1GpqMIRN4PLq4CUxuB4iQpKZ5KUDmrZLroPFicaRURPZd6sTUbTy-8AIasIl3tCdVGl8iz6YD6ndknHRnbYwEefuXIKAfRyyAbdycAwbFeKD040QiPnzhj0i9LNhZEoO2Yl7VAxjnZ8U7aSBFC-ZkY8X5Lj88MCJi3wB97awffURIfcTJvgTJodjbKNnKehEH8wFDNh4QaCF0WVUAeVnhO_vbkiTjRos5RN2CJBrz-KyBGQKJO8X25bb1jjUOKgOmdrbRz24dnWY_aV5Yxh1jOo5OEoVu8EdtOZR-dtmukek7pjniPXhUWPuHUXog8ebqYC5P7jiIFgGy6o6bUiM7I0XArze0tNTrfrROD8F5y2GOmi47HUpUHBk3PAIfaJ5F3QNeyPjGp41bnifzTXS0R9hyPZOIZ1mRCoysPl1Y9auMgPfQt9Nkx6IO96hoz70nfkYI2vSGz2yWIj3nVcqcwOOdKoV4sgZ1Rrigm31hUkChYscnnIcmLn3qRvpdArLjseAZpqubUzuxBjOyEtzdME_7jgL8cCXjg_PM-tiByfhcu_hq74YIUOPp7EiuWJgk9qyiErUoxu-sADyWJt3Gc-VpjoZE7QKD8YE_q8Yaatd0jO6bHLd9SNMzoJkHOiqU02OXAuf25_OnzvqmiQ7SCxE21_xe4mhYW4yXACn2iXhgWZiVyUynQWcmlqUsxUwCz6hd9lNcEPwATF7eI9FLdkQkWPAgTyROZLvWoIYVpgVHSCpJ4xJV_RAnhsySwGCzn37LQt3gxzDnI-g5zH7U3_isUG8hwgTAs2blNFBme_MXdjM6CSVE4QPV0XvBavrkqvln99OL5Kci7Q5WKHlaqgBe2c7RgUDuUAhxn-YruWsANPFJu0Z-FJTeefAtf3-VWhqXwjEPkyKvsa6flVUBNp0Q8j7URwDmu4SBNxgvuCzmorkY-cqdN7BnKUDyIJUBRuYWU1ie7XapcmqjOeqg2jtV-fgJWEQgeVO0V4HizlPBJ0XLaExxzZ_i5hIMUoiFoc8u88P5GWeh5mkDRMPkJWMavrfi2kK6p4pjpBuK-yovXtRG8RMKDZlXwxiORtnLTHQbvX4IhdFM5QygFu5DRv74RcMg-jcRidpCun0SVYnxPS8n51iFayLrQ1ehl8ZkM226FQUEgJqzweg5QqORh2bg-0WbU1BPNj6Ct5-Ta-bEBaGQrpgig5HZXfoMwj4NIAsnUtC2yBqUsnqo_tU9efpyEYmOQe9ozLDk1SfidE9j46rnO9aXptfJ4-stvqttfMCp3HqJPVGtV-kaSEDyW9pDwaiBzj3bJPEEsCnA8yxhqWcBsh6vEOFikT3Zupj7kHtdHPJ8lDTG0jQdXJPMvDoXloRZdnEtifV58aI8whLdzTPTpvUW1ga1escSnRaPckzSITC6ttvGxs-PbWvh_Nb0CRhVwmLddMSt-Yzg2wh6JSThDL-lxasEo0QDCj8E8uv7ZE1BW-p-3OqjheF6bDWXX0oWIwhRDeVi_7BnKITRA-Md1FQywzQHH5jRRewnqYTGvH-Ru2UyURecWzyE5RlZFpSwzvjmKJ3VWFnXlo53n15dEbAvCnlH7v5iHpRnELnptIsTNVyC5Haxxx21GyfJ5bO07FtkXNObQMp4gFEzEe-88LflQ9hx7XCAni8nEGYqfYWXIc89KBjZ2TtlGmpPHqhnY3GNsAixUlMtlD3ggxkRXGVfBq29HXNpZM_np62qF-TZb0HPrHKh3SNT1BhJgU9UkRPksUA7-7dRh8XGd-0tzODjFSWpjWS-igNeStob1vop7_kLBepnypPQ3JraYeKv1M9RoVbWOPsIoRi5FaDLZlsdzESpenXwUmaBWwkQzQ6ZyG6kz-2HGJ3l7kwzrYI5Cb_EwQx5-ZrYajKVawqQypgpv9LsXVJgg0ugcX1XkpEcsWkBSZXGig_OfN8IXrxtuMyrSOSoIh4WiGyBP__5w63PvE9a-fzO-XIVCcgpkUJmY8qxaGcoNz1D6TxAUxJWhcBJrdc-r641X-ZG2OKVvj_jGu3B4mV5W3-UveSQyPVpu14eKgXzGm795aDOKxkUdT4ijCCOBxYmun0mmavxT6fvQTQP4r4PikIjbVu2Zn5AaJyAy0Z7DBuhTJrUtSZPQ7BhB-Gf8KJZuz5pI-d8no_9GY6HlwUK-8hgnDW54Y-chgTcOTG7f1pMLi51jcrQku4VIIQxBU3PNvZHGaVjaHyMwGIjSDY8YuqONNAh7xde3kIzM-ejbd3pzs4bwGBkGLbPoOA0QuoACGzI3od_c3lJxNr8iTvbSkrhfR3_5JyRCJUhHCeC6lvmr7_-ofmZm3JVwh_LRIhW5dfOytV_0wemUYFffedflNfWY7ofa_mDKa9KAT7_FMZ3s8XfTC_3Pfxupp5fvqpxFwxYg6Aw-Gg1IMu4vWyri38d1RVqumoH6lM5YvctUzG0jy7iEgTgo3Eq6-nNn3GxYK4rr2Y4YfKtAFRkWN10TRMxd6DwOHaryztoi_jQbqLo_TsL224OqKXGvMmFM850WYZ6DJLm2IrYADv8bJSSs4VgfXQWu_NI7yyEGO-gdslFVrSQhaeKUTuZEmMcLARAw2q8Vbrf4op4rpomrarDBXnjhmUw9Vwv791q3YAb2o9rNMxk0Ngk7RDTx8soLJN6ZMWoi3I-o4lSLOoZq-kCvRe4mvx7Cyi58WN7NlAGmE1t0y_CajZPHr_H9aP5f_8HOQwzLsIKAAA=";
+      var txtEmbedUrl = "https://app.powerbi.com/dashboardEmbed?dashboardId=16c93f42-228d-4d66-a6bc-a4ca9f78bbdd&groupId=ce7f39cb-7ae5-44ee-92a7-c8d53056b64d";
+      var txtEmbedDashboardId = "16c93f42-228d-4d66-a6bc-a4ca9f78bbdd";
+
+      var models = window['powerbi-client'].models;
+      
+      // Embed configuration used to describe the what and how to embed.
+      // This object is used when calling powerbi.embed.
+      // This also includes settings and options such as filters.
+      // You can find more information at https://github.com/Microsoft/PowerBI-JavaScript/wiki/Embed-Configuration-Details.
+      var config = {
+          type: 'dashboard',
+          tokenType: models.TokenType.Embed,
+          accessToken: txtAccessToken,
+          embedUrl: txtEmbedUrl,
+          id: txtEmbedDashboardId
+      };
+      
+      var dashboardContainer = window.document.getElementById('dashboardContainer');
+      var dashboard = powerbi.embed(dashboardContainer, config);
+      
+      // Dashboard.off removes a given event handler if it exists.
+      dashboard.off("loaded");
+      
+      // Dashboard.on will add an event handler which prints to Log window.
+      dashboard.on("loaded", function() {
+          Log.logText("Loaded");
+      });
+      
+      dashboard.on("error", function(event) {
+          Log.log(event.detail);
+          
+          dashboard.off("error");
+      });
+      
+      dashboard.off("tileClicked");
+      dashboard.on("tileClicked", function(event) {
+          Log.log(event.detail);
+      });
+
+    </script>
   </body>
 </html>

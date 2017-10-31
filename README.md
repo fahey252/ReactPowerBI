@@ -14,10 +14,16 @@
   - <https://microsoft.github.io/PowerBI-JavaScript/demo/v2-demo/index.html>
 * <https://powerbi.microsoft.com/en-us/power-bi-embedded/>
 * <https://app.powerbi.com>
-* <https://github.com/Microsoft/PowerBI-JavaScript>
 * <https://azure.microsoft.com/en-us/resources/samples/powerbi-react-client/>
 * <https://www.npmjs.com/package/powerbi-client>
+* <https://github.com/Microsoft/PowerBI-JavaScript>
 * <https://github.com/Microsoft/PowerBI-React>
+* <https://github.com/guyinacube/PowerBI-Developer-Samples>
+* React DevTools: <https://fb.me/react-devtools>
+* Generating an embed token. <https://msdn.microsoft.com/library/mt784614.aspx>
+* <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-app/>
+* <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-openidconnect-nodejs>
+* <https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/tree/master>
 
 ## Notes
 * Can embed dashboard and reports
@@ -43,6 +49,7 @@ create-react-app my-app
 cd my-app/
 npm start
 ```
+* Rename npm script `start` to `start-react`. add `start: node server.js`
 * Create `server.js`
 * `npm run build`
 * Deployment Options > GitHub > Authorize
@@ -51,3 +58,9 @@ npm start
 * add `express`, `body-parser`, `dotenv`
 * added node engine version: `"engines":{"node":">= 8.8.1"}`
 * moved create-react-app related dependencies as devDependencies. (deploys faster, unecessary remotely.)
+```js
+// in src/index.js un register service worker. Not needed, causes page to be white on reload due to invalid manifest.json.
+import { unregister } from './registerServiceWorker';
+unregister();
+//registerServiceWorker();
+```
