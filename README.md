@@ -1,6 +1,6 @@
 # ReactPowerBI
 
-## Links
+## Helpful Links
 * Demo: <https://fahey-powerbi-react.azurewebsites.net>
 * Sample PowerBI Embedded
   - <https://azurewebsiteexperience.azurewebsites.net/>
@@ -23,7 +23,9 @@
 * Generating an embed token. <https://msdn.microsoft.com/library/mt784614.aspx>
 * <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-app/>
 * <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-openidconnect-nodejs>
+* Azure Active Directory Authentication Flow
 * <https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/tree/master>
+* <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code>
 
 ## Notes
 * Can embed dashboard and reports
