@@ -1,6 +1,6 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    port = process.env.port || 7000,
+    port = process.env.PORT || 7000,
     app = express();
 
 require('dotenv').config(); // loads process.env environment variables

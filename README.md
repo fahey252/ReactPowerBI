@@ -15,6 +15,9 @@
 * <https://powerbi.microsoft.com/en-us/power-bi-embedded/>
 * <https://app.powerbi.com>
 * <https://github.com/Microsoft/PowerBI-JavaScript>
+* <https://azure.microsoft.com/en-us/resources/samples/powerbi-react-client/>
+* <https://www.npmjs.com/package/powerbi-client>
+* <https://github.com/Microsoft/PowerBI-React>
 
 ## Notes
 * Can embed dashboard and reports
