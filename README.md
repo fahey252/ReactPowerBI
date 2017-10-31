@@ -20,7 +20,7 @@
 * <https://github.com/Microsoft/PowerBI-React>
 * <https://github.com/guyinacube/PowerBI-Developer-Samples>
 * React DevTools: <https://fb.me/react-devtools>
-* Generating an embed token. <https://msdn.microsoft.com/library/mt784614.aspx>
+* Generating a PowerBI embed token. <https://msdn.microsoft.com/library/mt784614.aspx>
 * <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-app/>
 * <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-openidconnect-nodejs>
 * Azure Active Directory Authentication Flow

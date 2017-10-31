@@ -1,3 +1,5 @@
+const redirectUrl = process.env.FAHEY_REDIRECT_URL || 'No redirect URL set';
+
 exports.creds = {
     // Required
     identityMetadata: 'https://login.microsoftonline.com/ajgdemos.onmicrosoft.com/.well-known/openid-configuration', 
@@ -17,7 +19,7 @@ exports.creds = {
     responseMode: 'form_post', 
   
     // Required, the reply URL registered in AAD for your app
-    redirectUrl: 'http://localhost:3000/auth/openid/return', 
+    redirectUrl: redirectUrl, 
   
     // Required if we use http for redirectUrl
     allowHttpForRedirectUrl: true,
@@ -75,7 +77,7 @@ exports.creds = {
   exports.resourceURL = 'https://graph.windows.net';
   
   // The url you need to go to destroy the session with AAD
-  exports.destroySessionUrl = 'https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=http://localhost:3000';
+  exports.destroySessionUrl = 'https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=' + redirectUrl;
   
   // If you want to use the mongoDB session store for session middleware; otherwise we will use the default
   // session store provided by express-session.

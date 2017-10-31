@@ -6,16 +6,16 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var util = require('util');
 var bunyan = require('bunyan');
-var config = require('./config');
 var request = require('request');
 
 require('dotenv').config(); // loads process.env environment variables
 
-const workspaceId = process.env.FAHEY_WORKSPACE_ID;
-const reportId = process.env.FAHEY_REPORT_ID;
-const clientId = process.env.FAHEY_CLIENT_ID;
-const clientSecret = process.env.FAHEY_CLIENT_SECRET;
-const redirectUrl = process.env.FAHEY_REDIRECT_URL;
+const config = require('./config');
+const workspaceId = process.env.FAHEY_WORKSPACE_ID || 'No workspace id set';
+const reportId = process.env.FAHEY_REPORT_ID || 'No report id set';
+const clientId = process.env.FAHEY_CLIENT_ID || 'No client id set';
+const clientSecret = process.env.FAHEY_CLIENT_SECRET || 'No client secret set';
+const redirectUrl = process.env.FAHEY_REDIRECT_URL || 'No redirect URL set';
 const port = process.env.PORT || 3000;
 
 // set up database for express session
