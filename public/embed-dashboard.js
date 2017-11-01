@@ -41,7 +41,7 @@ function setupDashboard(embedToken) {
     });
 }
 
-axios.get('/powerbi').then(function (response) {
+axios.get('/powerbi-embedtoken').then(function (response) {
     const embedToken = response.data;
     setupDashboard(embedToken);
 }).catch(function (error) {

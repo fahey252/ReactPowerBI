@@ -26,6 +26,7 @@
 * Azure Active Directory Authentication Flow
 * <https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/tree/master>
 * <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code>
+* <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-embed-sample-app-owns-data/>
 
 ## Notes
 * Can embed dashboard and reports
