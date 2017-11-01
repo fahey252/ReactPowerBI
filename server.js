@@ -4,7 +4,6 @@ const request = require('request');
 
 require('dotenv').config(); // loads process.env environment variables
 
-const config = require('./config');
 const workspaceId = process.env.FAHEY_WORKSPACE_ID || 'No workspace id set';
 const reportId = process.env.FAHEY_REPORT_ID || 'No report id set';
 const clientId = process.env.FAHEY_CLIENT_ID || 'No client id set';
@@ -15,7 +14,6 @@ const proxyUserPassword = process.env.FAHEY_PROXY_USER_PASSWORD || 'No proxy use
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 app.get('/powerbi-embedtoken', function (req, res) {
