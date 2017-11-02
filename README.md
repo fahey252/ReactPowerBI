@@ -37,58 +37,52 @@ $ npm run start-react # compiles ES6/React on file save
 * Security Contexts - App workspaces (previously groups)
 
 ## Helpful Links
-* Demo: <https://fahey-react-powerbi.azurewebsites.net>
-* Sample PowerBI Embedded
-  - <https://azurewebsiteexperience.azurewebsites.net/>
+* Microsft's Sample PowerBI Embedded
+  - <https://azurewebsiteexperience.azurewebsites.net>
 * PowerBI Pricing
   - <https://azure.microsoft.com/en-us/pricing/details/power-bi-embedded/>
   - Cost per node/number of nodes
-* <https://azure.microsoft.com/en-us/resources/samples/active-directory-node-webapp-openidconnect/>
-* Developer Embedding
+* Sample Node Auth for when user owns data: <https://azure.microsoft.com/en-us/resources/samples/active-directory-node-webapp-openidconnect/>
+* PowerBI Developer Embedding Getting Started
   - <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-embedding/>
-* JavaScript embed sample
+* PowerBI JavaScript Embed Sample
   - <https://microsoft.github.io/PowerBI-JavaScript/demo/v2-demo/index.html>
-* <https://powerbi.microsoft.com/en-us/power-bi-embedded/>
-* <https://app.powerbi.com>
-* <https://azure.microsoft.com/en-us/resources/samples/powerbi-react-client/>
-* <https://www.npmjs.com/package/powerbi-client>
-* <https://github.com/Microsoft/PowerBI-JavaScript>
-* <https://github.com/Microsoft/PowerBI-React>
-* <https://github.com/guyinacube/PowerBI-Developer-Samples>
+* PowerBI Portal: <https://app.powerbi.com>
+* Sample PowerBI React Client: <https://azure.microsoft.com/en-us/resources/samples/powerbi-react-client/>
+* NPM PowerBI Client: <https://www.npmjs.com/package/powerbi-client>
+* PowerBI JavaScript SDK: <https://github.com/Microsoft/PowerBI-JavaScript>
+* PowerBI React plugin (not widely contributed to): <https://github.com/Microsoft/PowerBI-React>
+* App Owns/User Owns Data Samples: <https://github.com/guyinacube/PowerBI-Developer-Samples>
 * React DevTools: <https://fb.me/react-devtools>
-* Generating a PowerBI embed token. <https://msdn.microsoft.com/library/mt784614.aspx>
-* <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-app/>
-* <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-openidconnect-nodejs>
-* Azure Active Directory Authentication Flow
-* <https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/tree/master>
-* <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code>
-* <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-embed-sample-app-owns-data/>
+* Generating a PowerBI embed token: <https://msdn.microsoft.com/library/mt784614.aspx>
+* Registering a PowerBI App: <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-app/>
+* Good starting points for Azure Active Directory Auth Flow:
+  - <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-openidconnect-nodejs>
+  - <https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/tree/master>
+  - <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code>
+  - <https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-embed-sample-app-owns-data/>
 
-## Agenda
+## High Level Steps
+* Create Git Repo
 * Start React App
-* Create Azure Web App
-* Deploy to Azure
-* Embed PowerBI
-
-## Scratchpad Notes
-* Create GitHub Repo
-* Bootstrap new app via Create React App. <https://github.com/facebookincubator/create-react-app#getting-started>
-```
+  - <https://github.com/facebookincubator/create-react-app#getting-started>
+```bash
 npm install -g create-react-app
-
 create-react-app my-app
 cd my-app/
 npm start
 ```
-* Rename npm script `start` to `start-react`. add `start: node server.js`
-* Create `server.js`
-* `npm run build`
+* Create Azure Web App
 * Deployment Options > GitHub > Authorize
-* Azure Create Web App
-* remove /build directory from .gitignore (real app, setup build process)
+* Rename npm script `start` to `start-react`. add `start: node server.js`.
+  - start command conflicts, called by Azure when deploying.
+* Create `server.js`
 * add `express`, `dotenv`
-* added node engine version: `"engines":{"node":">= 8.8.1"}`
-* moved create-react-app related dependencies as devDependencies. (deploys faster, unecessary remotely.)
+* Added node engine version: `"engines":{"node":">= 8.8.1"}` to `package.json` for Azure.
+* Move `create-react-app` related dependencies as devDependencies. (deploys faster, unecessary remotely.)
+* `npm run build` before deploying to Azure to get JavaScript compiled.
+* Remove `/build` directory from .gitignore (real app, setup build process)
+  - Wouldn't do this for a production based application.
 ```js
 // in src/index.js un register service worker. Not needed, causes page to be white on reload due to invalid manifest.json.
 import { unregister } from './registerServiceWorker';
@@ -96,3 +90,5 @@ unregister();
 //registerServiceWorker();
 ```
 * Set Application settings in Azure Web App with environment variables
+* Deploy to Azure
+* Embed PowerBI
