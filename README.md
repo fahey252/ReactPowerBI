@@ -1,4 +1,4 @@
-# ReactPowerBI
+# React PowerBI Sample (Proxy User)
 Sample NodeJS application to authenticate to Azure Active Directory, get a PowerBI Embed Token and embed PowerBI into a React app via proxy user.
 
 Demo site: <https://fahey-react-powerbi.azurewebsites.net>. Note: may load slow due to shared/free hosting app service plan.
@@ -23,6 +23,8 @@ $ node server.js
   - PowerBI JavaScript SDK <https://github.com/Microsoft/PowerBI-JavaScript>
   - Weak React support from Microosft: <https://github.com/Microsoft/PowerBI-React>
     + Last commit over a year ago, 3 total commits, 2 contributors at the time of this writing.
+* Note handling refresh tokens for the proxy user. New token is regenerate each request. Could be improved/cached.
+* Could use axious client and server side instead of `request-promise`
 * Can embed tiles, dashboards and reports.
 * Can embed for organization or for customers
   - For customers, at least one PowerBI Pro account is needed, acts as a proxy.
