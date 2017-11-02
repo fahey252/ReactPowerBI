@@ -67,10 +67,10 @@ $ npm run start-react # compiles ES6/React on file save
 * Start React App
   - <https://github.com/facebookincubator/create-react-app#getting-started>
 ```bash
-npm install -g create-react-app
-create-react-app my-app
-cd my-app/
-npm start
+$ sudo npm install -g create-react-app
+$ create-react-app my-app
+$ cd my-app/
+$ npm start
 ```
 * Create Azure Web App
 * Deployment Options > GitHub > Authorize
