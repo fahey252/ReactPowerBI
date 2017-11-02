@@ -13,6 +13,11 @@ $ node server.js
 
 # Open web browser, go to http://localhost:3000 to see PowerBI embeded in React app
 # If this fails, it is likely because values in .env files are not populated correctly.
+
+# Recommend to run for live reload during local development
+# Note: if running as same time, client may run before server causing race condition, failed request.
+$ nodemon     # assumed installed globally, assumes server.js is the entry point, reloads server code on save
+$ npm run start-react # compiles ES6/React on file save
 ```
 
 ## Notes
